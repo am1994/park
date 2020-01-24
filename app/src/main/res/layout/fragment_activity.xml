@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+     <data>
+          <variable name="viewmodel" type="com.devmina.droid_ant.carpark.occupancyLevel.OccupancyLevelViewModel"/>
+     </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+               android:background="@color/backgroundColor">
+
+
+     <com.devmina.droid_ant.carpark.occupancyLevel.OccupancyLevelCanvas
+              android:layout_width="325dp"
+              android:id="@+id/occupancyLevelCanvas"
+              android:layout_height="324dp" app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
+           app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
+           android:layout_marginTop="32dp" app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintVertical_bias="0.212"/>
+     <TextView
+             android:text="@string/totalSpaces"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/textView"
+             app:layout_constraintStart_toStartOf="@+id/occupancyLevelCanvas"
+             app:layout_constraintTop_toTopOf="@+id/occupancyLevelCanvas"
+             app:layout_constraintEnd_toEndOf="@+id/occupancyLevelCanvas"
+             app:layout_constraintBottom_toBottomOf="@+id/occupancyLevelCanvas"
+             app:layout_constraintHorizontal_bias="0.065" app:layout_constraintVertical_bias="0.8"
+             android:textSize="18sp" android:textColor="@color/textColor"
+             android:fontFamily="sans-serif-black"/>
+     <TextView
+             android:text="@string/bluBadg"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/textView2"
+             app:layout_constraintTop_toBottomOf="@+id/textView"
+             app:layout_constraintEnd_toEndOf="@+id/occupancyLevelCanvas"
+             app:layout_constraintStart_toStartOf="@+id/occupancyLevelCanvas" android:layout_marginBottom="8dp"
+             app:layout_constraintBottom_toBottomOf="@+id/occupancyLevelCanvas" android:textSize="18sp"
+             android:fontFamily="sans-serif-black" android:textColor="@color/textColor"
+             app:layout_constraintHorizontal_bias="0.087"/>
+     <TextView
+             android:text="@{viewmodel.totalValue}"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+
+             android:id="@+id/total" app:layout_constraintStart_toEndOf="@+id/textView"
+             android:layout_marginStart="8dp" app:layout_constraintTop_toTopOf="@+id/occupancyLevelCanvas"
+             app:layout_constraintEnd_toEndOf="@+id/occupancyLevelCanvas" android:layout_marginEnd="8dp"
+             app:layout_constraintBottom_toBottomOf="@+id/occupancyLevelCanvas" android:textSize="14sp"
+             android:fontFamily="sans-serif-black" tools:text="@string/total"
+             app:layout_constraintVertical_bias="0.78" app:layout_constraintHorizontal_bias="1.0"
+             android:textColor="@color/textColor"/>
+     <TextView
+             android:text="@{viewmodel.blueBadgeValue}"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/badge" android:layout_marginEnd="8dp" app:layout_constraintTop_toBottomOf="@+id/total"
+             app:layout_constraintEnd_toEndOf="@+id/occupancyLevelCanvas" android:layout_marginBottom="8dp"
+             app:layout_constraintBottom_toBottomOf="@+id/occupancyLevelCanvas"
+             app:layout_constraintStart_toEndOf="@+id/textView2" android:layout_marginStart="8dp"
+             app:layout_constraintHorizontal_bias="1.0" tools:text="@string/badge"
+             android:fontFamily="sans-serif-black" android:textSize="14sp" android:textColor="@color/textColor"/>
+     <TextView
+             android:text="@{viewmodel.totalof}"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/totalOf"
+             app:layout_constraintEnd_toEndOf="@+id/occupancyLevelCanvas"
+             app:layout_constraintStart_toStartOf="@+id/occupancyLevelCanvas"
+             app:layout_constraintTop_toTopOf="@+id/occupancyLevelCanvas"
+             app:layout_constraintBottom_toBottomOf="@+id/occupancyLevelCanvas"
+             app:layout_constraintHorizontal_bias="0.656"
+             tools:text="@string/total_of" android:textSize="18sp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

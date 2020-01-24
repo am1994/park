@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CarPark</string>
+    <string name="totalSpaces">Total spaces</string>
+    <string name="bluBadg">Blue Badge spaces</string>
+    <string name="total">570</string>
+    <string name="total_of">of 570</string>
+    <string name="badge">6</string>
+</resources>
